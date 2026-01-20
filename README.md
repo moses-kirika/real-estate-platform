@@ -48,3 +48,4 @@ For detailed information on the technology stack, project structure, and feature
 Environment variables are stored in `.env`. Ensure this file is never committed to version control. See [DOCUMENTATION.md](./DOCUMENTATION.md#security--privacy) for deployment details.
 "# real-estate-website" 
 "# real-estate-website" 
+"# real-estate-platform" 
