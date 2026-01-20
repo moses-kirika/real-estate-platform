@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?
+  image         String?
+  role          String    @default("USER")
+  
+  // Agent verification fields
+  phone         String?
+  company       String?   // Company/Agency name
+  licenseNumber String?   // Real estate license number
+  address       String?   // Physical business address
+  idNumber      String?   // National ID or business registration number
+  verifiedAt    DateTime? // Timestamp when the agent was verified
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  properties    Property[]
+  inquiries     Inquiry[]
+  transactions  TransactionLog[]
+  savedListings SavedListing[]
+}
+
+model Property {
+  id          String         @id @default(cuid())
+  title       String
+  description String
+  price       Decimal
+  location    String
+  type        String
+  status      String         @default("AVAILABLE")
+  bedrooms    Int?
+  bathrooms   Int?
+  area        Float?         // in sqft or sqm
+  features    String       // Comma separated string
+  
+  ownerId     String
+  owner       User           @relation(fields: [ownerId], references: [id])
+  
+  images      PropertyImage[]
+  inquiries   Inquiry[]
+  transactions TransactionLog[]
+  savedBy     SavedListing[]
+
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model PropertyImage {
+  id         String   @id @default(cuid())
+  url        String
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  message    String
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id])
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+
+  guestName  String?
+  guestEmail String?
+  
+  createdAt  DateTime @default(now())
+}
+
+model SavedListing {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, propertyId])
+}
+
+model TransactionLog {
+  id          String   @id @default(cuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id])
+  agentId     String
+  agent       User     @relation(fields: [agentId], references: [id])
+  type        String   // SALE, RENT
+  amount      Decimal
+  createdAt   DateTime @default(now())
+}
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String   // e.g. "Home Buyer", "Property Investor"
+  content   String
+  rating    Int      @default(5)
+  image     String?
+  createdAt DateTime @default(now())
+}
