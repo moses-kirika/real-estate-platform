@@ -19,7 +19,7 @@ export function Sidebar({ className, role }: SidebarProps) {
             label: "Overview",
             icon: LayoutDashboard,
             href: "/dashboard",
-            color: "text-sky-500",
+            color: "text-primary",
         },
     ]
 
@@ -28,36 +28,37 @@ export function Sidebar({ className, role }: SidebarProps) {
             label: "Overview",
             icon: LayoutDashboard,
             href: "/agent",
-            color: "text-sky-500",
+            color: "text-primary",
         },
         {
             label: "My Listings",
             icon: Home,
             href: "/agent/properties",
-            color: "text-pink-700",
+            color: "text-secondary",
         },
         {
             label: "Inquiries (Received)",
             icon: Mail,
             href: "/agent/inquiries",
-            color: "text-emerald-500",
+            color: "text-emerald-600",
         },
         {
             label: "Analytics",
             icon: TrendingUp,
             href: "/agent/analytics",
-            color: "text-orange-500",
+            color: "text-primary",
         },
     ]
 
     return (
         <div className={cn("pb-12 space-y-4", className)}>
             <div className="px-3 py-2">
-                <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+                <h2 className="mb-2 px-4 text-lg font-serif font-bold tracking-tight text-primary">
                     Dashboard
                 </h2>
                 <div className="space-y-1">
-                    {dashboardRoutes.map((route) => (
+                    {/* Only show generic dashboard link for regular users */}
+                    {(!role || (role !== "AGENT" && role !== "ADMIN")) && dashboardRoutes.map((route) => (
                         <Button
                             key={route.href}
                             variant={pathname === route.href ? "secondary" : "ghost"}
@@ -71,7 +72,7 @@ export function Sidebar({ className, role }: SidebarProps) {
                         </Button>
                     ))}
 
-                    {(role === "AGENT" || role === "ADMIN") && (
+                    {role === "AGENT" && (
                         <>
                             <div className="px-4 py-2 mt-4 text-xs font-semibold text-muted-foreground tracking-wider uppercase">
                                 Agent Panel

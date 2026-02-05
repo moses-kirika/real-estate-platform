@@ -1,57 +1,69 @@
 import { db } from "@/lib/db"
 import { PropertyCard } from "@/components/property-card"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { PropertyResults } from "@/components/properties/property-results"
+import { FilterSidebar } from "@/components/properties/filter-sidebar"
 
 export default async function PropertiesPage({
     searchParams,
 }: {
-    searchParams: { query?: string }
+    searchParams: {
+        query?: string
+        type?: string
+        minPrice?: string
+        maxPrice?: string
+        bedrooms?: string
+    }
 }) {
     const query = searchParams?.query || ""
+    const type = searchParams?.type
+    const minPrice = searchParams?.minPrice ? Number(searchParams.minPrice) : undefined
+    const maxPrice = searchParams?.maxPrice ? Number(searchParams.maxPrice) : undefined
+    const bedrooms = searchParams?.bedrooms ? Number(searchParams.bedrooms) : undefined
 
     const properties = await db.property.findMany({
         where: {
             status: "AVAILABLE",
-            OR: query ? [
-                { location: { contains: query } },
-                { title: { contains: query } },
-            ] : undefined,
+            // Search query logic
+            ...(query ? {
+                OR: [
+                    { location: { contains: query } },
+                    { title: { contains: query } },
+                ]
+            } : {}),
+            // Type filter
+            ...(type ? { type } : {}),
+            // Price filter
+            price: {
+                gte: minPrice,
+                lte: maxPrice,
+            },
+            // Bedrooms filter
+            ...(bedrooms ? {
+                bedrooms: { gte: bedrooms }
+            } : {})
         },
         include: { images: true },
         orderBy: { createdAt: "desc" },
     })
 
     return (
-        <div className="container py-8">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-                <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Properties</h1>
-                    <p className="text-muted-foreground">Find your dream home from our latest listings.</p>
-                </div>
-                <form action="/properties" className="flex gap-2 w-full md:w-auto">
-                    <Input
-                        name="query"
-                        placeholder="Search locations or titles..."
-                        defaultValue={query}
-                        className="max-w-xs"
-                    />
-                    <Button type="submit">Search</Button>
-                </form>
+        <div className="container py-12 px-4 max-w-7xl mx-auto">
+            <div className="mb-12 border-b border-zinc-200 pb-12">
+                <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight text-primary mb-4">
+                    Explore Our <br className="hidden md:block" />Verified Listings
+                </h1>
+                <p className="text-muted-foreground text-lg max-w-xl">
+                    From high-end apartments in Westlands to tranquil family homes in Karen and Lavington.
+                </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {properties.map((property) => (
-                    <PropertyCard key={property.id} property={property} />
-                ))}
-            </div>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                {/* Sidebar Filter */}
+                <FilterSidebar />
 
-            {properties.length === 0 && (
-                <div className="text-center py-20">
-                    <h3 className="text-lg font-medium">No properties found</h3>
-                    <p className="text-muted-foreground">Try adjusting your filters.</p>
-                </div>
-            )}
+                {/* Results Section */}
+                <PropertyResults properties={properties} />
+            </div>
         </div>
     )
 }

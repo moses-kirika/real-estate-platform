@@ -55,19 +55,12 @@ export default async function AdminContentPage() {
                             <DialogTitle>Add New Testimonial</DialogTitle>
                         </DialogHeader>
                         <form
-                            action={async (formData) => {
-                                await createTestimonialAction({
-                                    name: formData.get("name") as string,
-                                    role: formData.get("role") as string,
-                                    rating: parseInt(formData.get("rating") as string),
-                                    content: formData.get("content") as string,
-                                })
-                            }}
+                            action={createTestimonialAction}
                             className="space-y-4 py-4"
                         >
                             <div className="space-y-2">
                                 <Label htmlFor="name">Name</Label>
-                                <Input id="name" name="name" required placeholder="e.g. Jane Doe" />
+                                <Input id="name" name="name" required placeholder="Client name" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="role">Role</Label>

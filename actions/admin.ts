@@ -55,11 +55,23 @@ export async function deletePropertyAction(propertyId: string) {
     revalidatePath("/admin/properties")
 }
 
-export async function createTestimonialAction(data: { name: string; role: string; content: string; rating: number }) {
+export async function createTestimonialAction(formData: FormData) {
     const session = await auth()
     if (session?.user?.role !== "ADMIN") throw new Error("Unauthorized")
 
-    await db.testimonial.create({ data })
+    const name = formData.get("name") as string
+    const role = formData.get("role") as string
+    const rating = parseInt(formData.get("rating") as string)
+    const content = formData.get("content") as string
+
+    await db.testimonial.create({
+        data: {
+            name,
+            role,
+            rating,
+            content,
+        }
+    })
     revalidatePath("/admin/content")
 }
 
@@ -69,4 +81,18 @@ export async function deleteTestimonialAction(id: string) {
 
     await db.testimonial.delete({ where: { id } })
     revalidatePath("/admin/content")
+}
+
+export async function updateUserEmailAction(formData: FormData) {
+    const session = await auth()
+    if (session?.user?.role !== "ADMIN") throw new Error("Unauthorized")
+
+    const userId = formData.get("userId") as string
+    const email = formData.get("email") as string
+
+    await db.user.update({
+        where: { id: userId },
+        data: { email }
+    })
+    revalidatePath("/admin/users")
 }

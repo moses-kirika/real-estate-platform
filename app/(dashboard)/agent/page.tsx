@@ -19,12 +19,12 @@ export default async function AgentDashboardPage() {
         <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight">Agent Dashboard</h2>
+                    <h2 className="text-3xl font-serif font-bold tracking-tight text-primary">Agent Dashboard</h2>
                     <p className="text-muted-foreground">Manage your listings and inquiries.</p>
                 </div>
                 <Link
                     href="/agent/analytics"
-                    className="text-sm font-medium text-sky-600 hover:text-sky-700 flex items-center gap-1 group"
+                    className="text-sm font-medium text-primary hover:text-primary/80 flex items-center gap-1 group"
                 >
                     View detailed analytics
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -52,13 +52,13 @@ export default async function AgentDashboardPage() {
                         <p className="text-xs text-muted-foreground">Messages from potential buyers</p>
                     </CardContent>
                 </Card>
-                <Card className="hover:shadow-md transition-shadow bg-sky-50/50 border-sky-100">
+                <Card className="hover:shadow-md transition-shadow bg-secondary/10 border-secondary/20">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
-                        <DollarSign className="h-4 w-4 text-sky-600" />
+                        <DollarSign className="h-4 w-4 text-secondary" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">{formatCurrency(analytics.totalRevenue)}</div>
+                        <div className="text-2xl font-bold text-primary">{formatCurrency(analytics.totalRevenue)}</div>
                         <p className="text-xs text-muted-foreground">From closed deals</p>
                     </CardContent>
                 </Card>
