@@ -1,15 +1,16 @@
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 import { db } from "@/lib/db";
 import { auth } from "@/auth";
 import { propertySchema } from "@/lib/validations/property";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
     try {
-        const { searchParams } = new URL(req.url);
+        const { searchParams } = req.nextUrl;
         const propertyType = searchParams.get("type");
         const maxPrice = searchParams.get("maxPrice");
 
