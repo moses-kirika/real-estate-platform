@@ -34,8 +34,15 @@ export async function POST(req: Request) {
         });
 
         return NextResponse.json(inquiry);
-    } catch (error) {
+    } catch (error: any) {
         console.error("Inquiry API error:", error);
+
+        if (error.code === 'P2021' || error.message?.includes('database file does not exist')) {
+            return NextResponse.json(
+                { error: "Database configuration error. Check connection string." },
+                { status: 500 }
+            );
+        }
 
         return NextResponse.json(
             { error: "Failed to create inquiry" },

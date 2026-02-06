@@ -32,8 +32,17 @@ export async function GET(req: Request) {
         });
 
         return NextResponse.json(properties);
-    } catch (error) {
+    } catch (error: any) {
         console.error("Properties API error:", error);
+
+        // Specific error for Prisma initialization issues (common on Vercel)
+        if (error.code === 'P2021' || error.message?.includes('database file does not exist')) {
+            return NextResponse.json(
+                { error: "Database configuration error. Ensure the database is properly initialized." },
+                { status: 500 }
+            );
+        }
+
         return NextResponse.json(
             { error: "Internal Server Error" },
             { status: 500 }
