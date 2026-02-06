@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { db } from "@/lib/db"
 import { PropertyCard } from "@/components/property-card"
 import { PropertyResults } from "@/components/properties/property-results"
