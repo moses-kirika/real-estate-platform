@@ -41,6 +41,10 @@ interface User {
     licenseNumber?: string | null
     address?: string | null
     idNumber?: string | null
+    properties?: {
+        id: string
+        title: string
+    }[]
 }
 
 export function UserManagement({ users }: { users: User[] }) {
@@ -152,6 +156,22 @@ export function UserManagement({ users }: { users: User[] }) {
                                     <h4 className="font-semibold text-muted-foreground mb-1">Address</h4>
                                     <p className="font-medium text-foreground">{viewDetailsAgent.address || "Not provided"}</p>
                                 </div>
+                                {viewDetailsAgent.role === "AGENT" && (
+                                    <div className="col-span-2 pt-4 border-t">
+                                        <h4 className="font-semibold text-muted-foreground mb-2">Listed Properties ({viewDetailsAgent.properties?.length || 0})</h4>
+                                        {viewDetailsAgent.properties && viewDetailsAgent.properties.length > 0 ? (
+                                            <ul className="space-y-1 max-h-40 overflow-y-auto pr-2 custom-scrollbar">
+                                                {viewDetailsAgent.properties.map((property) => (
+                                                    <li key={property.id} className="text-sm py-1 border-b border-zinc-100 last:border-0">
+                                                        {property.title}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className="text-sm text-zinc-500 italic">No properties listed yet.</p>
+                                        )}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="pt-4 border-t flex justify-end">
@@ -195,6 +215,7 @@ function UserTable({
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
                         {showRole && <TableHead>Role</TableHead>}
+                        {showVerification && <TableHead>Properties</TableHead>}
                         {showVerification && <TableHead>Verification</TableHead>}
                         <TableHead>Joined</TableHead>
                         <TableHead className="text-right">Actions</TableHead>
@@ -227,6 +248,13 @@ function UserTable({
                                 <TableCell>
                                     <Badge variant={user.role === "ADMIN" ? "default" : "secondary"}>
                                         {user.role}
+                                    </Badge>
+                                </TableCell>
+                            )}
+                            {showVerification && (
+                                <TableCell>
+                                    <Badge variant="outline" className="font-medium">
+                                        {user.properties?.length || 0}
                                     </Badge>
                                 </TableCell>
                             )}
@@ -300,7 +328,7 @@ function UserTable({
                     ))}
                     {users.length === 0 && (
                         <TableRow>
-                            <TableCell colSpan={6} className="text-center py-12 text-muted-foreground">
+                            <TableCell colSpan={showVerification ? 7 : 6} className="text-center py-12 text-muted-foreground">
                                 No users found in this category.
                             </TableCell>
                         </TableRow>

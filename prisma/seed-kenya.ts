@@ -30,7 +30,11 @@ async function main() {
                     features: "Swimming Pool, Garden, Solar Water Heating, CCTV, High-Speed Internet",
                     lat: -1.2635,
                     lng: 36.8024,
-                    images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Karen Classic Mansion",
@@ -45,7 +49,11 @@ async function main() {
                     features: "Acreage, Guest Wing, Fireplace, Borehole, Electric Fence",
                     lat: -1.3333,
                     lng: 36.7000,
-                    images: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Lavington Executive Townhouse",
@@ -60,7 +68,11 @@ async function main() {
                     features: "Gated Community, Rooftop Terrace, Backup Generator, DSQ",
                     lat: -1.2833,
                     lng: 36.7667,
-                    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Runda Evergreen Estate Villa",
@@ -75,7 +87,11 @@ async function main() {
                     features: "Large Garden, Modern Kitchen, Secure Neighborhood, Solar Lighting",
                     lat: -1.2167,
                     lng: 36.8167,
-                    images: ["https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Muthaiga Heights Penthouse",
@@ -90,7 +106,11 @@ async function main() {
                     features: "Panic Room, Forest View, Private Lift, Smart Home System",
                     lat: -1.2500,
                     lng: 36.8333,
-                    images: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1512918766775-9411917fd82b?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 }
             ]
         },
@@ -117,7 +137,11 @@ async function main() {
                     features: "Ocean View, Beach Access, Swimming Pool, Gym, Lift",
                     lat: -4.0333,
                     lng: 39.6833,
-                    images: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Diani Beach Luxury Villa",
@@ -132,7 +156,11 @@ async function main() {
                     features: "Private Pool, Tropical Garden, Fully Furnished, Walk to Beach",
                     lat: -4.2833,
                     lng: 39.5833,
-                    images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1599809275671-b5941cabc7a5?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Shanzu Serenity Heights",
@@ -147,7 +175,11 @@ async function main() {
                     features: "Sea Breezes, Modern Finishes, Boundary Wall, Secure Parking",
                     lat: -3.9667,
                     lng: 39.7500,
-                    images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Tudor Creek Modern Mansion",
@@ -162,7 +194,11 @@ async function main() {
                     features: "Creek View, Boat Dock, Large Veranda, Staff Quarters",
                     lat: -4.0500,
                     lng: 39.6667,
-                    images: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Mtwapa Waterside Haven",
@@ -177,7 +213,11 @@ async function main() {
                     features: "Creek Proximity, Garden, Perimeter Wall, Quiet Area",
                     lat: -3.9500,
                     lng: 39.7500,
-                    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 }
             ]
         },
@@ -204,7 +244,11 @@ async function main() {
                     features: "Lake View, Modern Finishes, Alarm System, Perimeter Wall",
                     lat: -0.1022,
                     lng: 34.7617,
-                    images: ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Elgon View Mansionette",
@@ -219,7 +263,11 @@ async function main() {
                     features: "Green Surroundings, Secure Gated Area, Parking for 4 Cars",
                     lat: 0.5167,
                     lng: 35.2833,
-                    images: ["https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Riat Hills Luxury Home",
@@ -234,7 +282,11 @@ async function main() {
                     features: "City Lights View, Lake Victoria View, Modern Open Kitchen, Electric Fencing",
                     lat: -0.0667,
                     lng: 34.7833,
-                    images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1512918766775-9411917fd82b?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Kenyatta Avenue Serviced Apartments",
@@ -249,7 +301,11 @@ async function main() {
                     features: "Hotel Amenities, High Rental Yield, 24/7 Security, City Views",
                     lat: -0.2833,
                     lng: 36.0667,
-                    images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 },
                 {
                     title: "Naivasha Lakeside Retreat",
@@ -264,7 +320,11 @@ async function main() {
                     features: "Lake Proximity, Large Garden, Wildlife Frequent Visits, Solar Hot Water",
                     lat: -0.7167,
                     lng: 36.4333,
-                    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"]
+                    images: [
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1600&auto=format&fit=crop",
+                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop"
+                    ]
                 }
             ]
         }

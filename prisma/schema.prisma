@@ -79,6 +79,7 @@ model Inquiry {
 
   guestName  String?
   guestEmail String?
+  guestPhone String?
   
   createdAt  DateTime @default(now())
 }
