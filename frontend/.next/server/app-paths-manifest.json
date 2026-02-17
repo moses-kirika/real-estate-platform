@@ -1,4 +1,26 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(auth)/auth/login/page": "app/(auth)/auth/login/page.js",
+  "/(auth)/auth/register-agent/page": "app/(auth)/auth/register-agent/page.js",
+  "/(auth)/auth/register/agent/page": "app/(auth)/auth/register/agent/page.js",
+  "/(auth)/auth/register/page": "app/(auth)/auth/register/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(public)/page": "app/(public)/page.js"
+  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js",
+  "/(dashboard)/admin/content/page": "app/(dashboard)/admin/content/page.js",
+  "/(dashboard)/admin/properties/page": "app/(dashboard)/admin/properties/page.js",
+  "/(dashboard)/admin/users/page": "app/(dashboard)/admin/users/page.js",
+  "/(dashboard)/agent/analytics/page": "app/(dashboard)/agent/analytics/page.js",
+  "/(dashboard)/agent/inquiries/page": "app/(dashboard)/agent/inquiries/page.js",
+  "/(dashboard)/agent/page": "app/(dashboard)/agent/page.js",
+  "/(dashboard)/agent/properties/[id]/page": "app/(dashboard)/agent/properties/[id]/page.js",
+  "/(dashboard)/agent/properties/new/page": "app/(dashboard)/agent/properties/new/page.js",
+  "/(dashboard)/agent/properties/page": "app/(dashboard)/agent/properties/page.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/(dashboard)/dashboard/settings/page": "app/(dashboard)/dashboard/settings/page.js",
+  "/(public)/agents/page": "app/(public)/agents/page.js",
+  "/(public)/agents/directory/page": "app/(public)/agents/directory/page.js",
+  "/(public)/agents/[id]/page": "app/(public)/agents/[id]/page.js",
+  "/(public)/page": "app/(public)/page.js",
+  "/(public)/properties/page": "app/(public)/properties/page.js",
+  "/(public)/properties/[id]/page": "app/(public)/properties/[id]/page.js"
 }

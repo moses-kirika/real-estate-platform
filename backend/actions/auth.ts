@@ -1,6 +1,7 @@
 "use server"
 
 import { signIn, signOut } from "@backend/auth"
+import { authConfig } from "@frontend/auth.config"
 import { AuthError } from "next-auth"
 import { PrismaClient } from "@prisma/client"
 import bcrypt from "bcryptjs"
