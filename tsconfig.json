@@ -24,7 +24,13 @@
     ],
     "paths": {
       "@/*": [
-        "./*"
+        "./frontend/*"
+      ],
+      "@backend/*": [
+        "./backend/*"
+      ],
+      "@frontend/*": [
+        "./frontend/*"
       ]
     }
   },

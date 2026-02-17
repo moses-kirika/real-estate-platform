@@ -1,58 +1,69 @@
-# Rafiki - Modern Kenyan Real Estate Platform
+# Real Estate Platform
 
-A premium, feature-rich real estate application tailored for the Kenyan market. Built with Next.js 14, featuring role-based dashboards, an interactive map view, and a fully responsive mobile-first design.
+A modern real estate platform built with Next.js, Prisma, and Tailwind CSS.
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black)
-![Prisma](https://img.shields.io/badge/Prisma-ORM-blue)
-![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
-![Leaflet](https://img.shields.io/badge/Leaflet-Maps-green)
+## Project Structure
 
-## ✨ New Features
+This project is organized into two main directories:
 
-- 🌍 **Kenyan Localization**: Expanded database with agents and listings across Nairobi, Mombasa, and Kisumu.
-- 🗺️ **Interactive Map View**: Built with Leaflet.js to visualize property locations with clusters and detail popups.
-- 📱 **Mobile-First Design**: Fully responsive navigation drawer and adaptive layouts optimized for all screen sizes.
-- 🏢 **Multi-Role Dashboards**: Specialized interfaces for Admins, Agents, and Regular Users.
-- 🔍 **Advanced Filtering**: Search properties by location, type, price range, and amenities.
-- 📧 **Inquiry System**: Direct communication channel between browsers and agents.
-- 🛡️ **Secure Auth**: Robust authentication using NextAuth.js v5.
+- `frontend/`: Contains the Next.js application, UI components, and static assets.
+- `backend/`: Contains the database schema (Prisma), API routes logic (conceptually), server actions, and utility scripts.
 
-## 🚀 Quick Start
+## Getting Started
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Setup Database**:
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-3. **Seed Data**:
-   ```bash
-   npm run seed
-   ```
-4. **Run Dev Server**:
-   ```bash
-   npm run dev
-   ```
+### Prerequisites
 
-## 🛠️ Tech Stack
+- Node.js (v18+)
+- PostgreSQL (or your preferred database)
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + Framer Motion
-- **Database**: Prisma ORM with SQLite (Development)
-- **Auth**: NextAuth.js v5 (Beta)
-- **Maps**: React-Leaflet
-- **Icons**: Lucide React
+### Installation
 
-## 📖 Documentation
+1.  Clone the repository
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Set up environment variables in `.env` (see `.env.example` if available)
 
-For detailed architecture overview, component structure, and security details, please refer to [**DOCUMENTATION.md**](./DOCUMENTATION.md).
+### Development
 
+To start the development server:
 
-## 🛡️ Security Note
+```bash
+npm run dev
+```
 
-Environment variables are managed via `.env`. Ensure this file is never committed. See [DOCUMENTATION.md](./DOCUMENTATION.md#security--privacy) for more details.
+This will start the Next.js frontend at `http://localhost:3000`.
 
+### Database
+
+The Prisma schema is located in `backend/prisma/schema.prisma`.
+
+To push schema changes:
+```bash
+npx prisma db push --schema=./backend/prisma/schema.prisma
+```
+
+To run migrations:
+```bash
+npx prisma migrate dev --schema=./backend/prisma/schema.prisma
+```
+
+### Build
+
+To build the application for production:
+
+```bash
+npm run build
+```
+
+This command generates the Prisma client and builds the Next.js frontend.
+
+## API & Backend
+
+Server actions and API logic are located in `backend/`. The frontend imports these using the `@backend` alias.
+- `@backend/actions`: Server actions
+- `@backend/lib`: Backend utilities and database client
+- `@backend/prisma`: Database schema
+
+The frontend uses `@frontend` or `@/` for its own components.
